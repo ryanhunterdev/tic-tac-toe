@@ -5,7 +5,7 @@ let playCount = 0;
 let currentPlayer = "player1";
 let boardTile = document.querySelectorAll('.board-tile');
 let resetBtn = document.querySelector('.reset-btn');
-
+let gameInfo = document.querySelector('.game-info');
 
 let t0 = "";
 let t1 = "";
@@ -22,10 +22,12 @@ let t8 = "";
 
 function handleTileClick(event) {
     //debugger
-    if (event.target.classList.contains('selected') === false) {
+    if (event.target.classList.contains('selected') === false && gameStatus) {
         event.target.classList.add('selected')
+        
         if (currentPlayer === 'player1') { 
-            
+            event.target.innerText = "X";
+            playCount++;
             if (event.target.dataset.index === "t0") {
             t0 = "x";
         
@@ -54,9 +56,11 @@ function handleTileClick(event) {
             t8 = "x";
             }  currentPlayer = 'player2';
         } else if (currentPlayer === 'player2') { 
+            event.target.innerText = "O";
+            playCount++;                 
             if (event.target.dataset.index === "t0") {
             t0 = "o";
-            
+
             } else if (event.target.dataset.index === "t1") {
             t1 = "o";
 
@@ -126,23 +130,47 @@ function compareResults() {
 }
 
 function itsADraw() {
-    console.log('draw');
+    gameInfo.textContent = 'draw'
+    gameStatus = false;
 }
 
 function xWins() {
-    console.log('x wins');
+    gameInfo.textContent = 'X wins'
+    gameStatus = false;
 }
 
 function oWins() {
-    console.log('o wins');
+    gameInfo.textContent = 'O wins'
+    gameStatus = false;
 }
 
+function resetAll() {
+    gameStatus = true;
+    t1 = "";
+    t0 = "";
+    t2 = "";
+    t3 = "";
+    t4 = "";
+    t5 = "";
+    t6 = "";
+    t7 = "";
+    t8 = "";
+    gameInfo.textContent = "";
+    playCount = 0;
+    for (let i = 0; i < boardTile.length; i++) {
+        boardTile[i].textContent = "";
+        boardTile[i].classList.remove('selected')
+    }
+}
+ 
 
 // event listeners
 
 for (let i = 0; i < boardTile.length; i++) {
     boardTile[i].addEventListener('click', handleTileClick)
 }
+
+resetBtn.addEventListener('click', resetAll);
 
 /*
 
