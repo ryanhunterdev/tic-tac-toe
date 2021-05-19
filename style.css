@@ -26,3 +26,13 @@
 .selected {
     background-color: mistyrose
 }
+
+.play-again {
+    cursor: none;
+    border: none;
+}
+
+.play-again-active {
+    cursor: pointer;
+    border: 1px solid black;
+}

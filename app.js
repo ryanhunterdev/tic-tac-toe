@@ -4,8 +4,11 @@ let gameStatus = true;
 let playCount = 0;
 let currentPlayer = "player1";
 let boardTile = document.querySelectorAll('.board-tile');
-let resetBtn = document.querySelector('.reset-btn');
 let gameInfo = document.querySelector('.game-info');
+let playAgainDiv = document.querySelector('.play-again');
+playAgainDiv.textContent = "Player 1's move";
+
+
 
 let tileObj = {
 0: "",
@@ -31,9 +34,11 @@ function handleTileClick(event) {
         if (currentPlayer === 'player1') { 
             event.target.innerText = "X";
             tileObj[selectedTile] = "x";
+            playAgainDiv.textContent = "Player 2's move";
         } else { 
             event.target.innerText = "O";
-            tileObj[selectedTile] = "o";                 
+            tileObj[selectedTile] = "o";     
+            playAgainDiv.textContent = "Player 1's move";            
 
         } playCount++;
     } compareResults();
@@ -75,17 +80,26 @@ function compareResults() {
 // win lose or draw functions
 
 function itsADraw() {
-    gameInfo.textContent = 'draw'
+    gameInfo.textContent = "It's a draw!"
     gameStatus = false;
+    playAgain();
 }
 
 function winnerFunction(xOrO) {
     if (xOrO === "x") {
-        gameInfo.textContent = 'X wins';
+        gameInfo.textContent = 'X wins!';
     } else {
-        gameInfo.textContent = 'O wins'
+        gameInfo.textContent = 'O wins!'
     } 
     gameStatus = false;
+    playAgain();
+    
+}
+
+function playAgain() {
+    playAgainDiv.classList.add('play-again-active');
+    playAgainDiv.textContent = "play again"
+    playAgainDiv.addEventListener('click', resetAll);
 }
 
 function resetAll() {
@@ -93,6 +107,8 @@ function resetAll() {
     gameInfo.textContent = "";
     playCount = 0;
     currentPlayer = "player1";
+    playAgainDiv.textContent = "Player 1's move";
+    playAgainDiv.classList.remove('play-again-active');
     for (let i = 0; i < boardTile.length; i++) {
         boardTile[i].textContent = "";
         boardTile[i].classList.remove('selected');
@@ -107,5 +123,5 @@ for (let i = 0; i < boardTile.length; i++) {
     boardTile[i].addEventListener('click', handleTileClick)
 }
 
-resetBtn.addEventListener('click', resetAll);
+//resetBtn.addEventListener('click', resetAll);
 
