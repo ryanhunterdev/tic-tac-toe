@@ -6,6 +6,7 @@ General styling
 
 html {
     box-sizing: border-box;
+    font-size: 10px;
   }
   
   body, h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -14,39 +15,39 @@ html {
     font-weight: 100;
   }
 
-  h1 {
-    font-weight: bold;
-    font-size: 2em;
-    color: rgb(218, 3, 3);
+body {
+    background-color: rgb(233, 228, 208);
     
 }
+
+h1 {
+    font-weight: bold;
+    font-size: 3rem;
+    color: rgb(218, 3, 3); 
+}
   
-  img {
+img {
     max-width: 100%;
     height: auto;
   }
   
-  a {
+a {
       text-decoration: none;
   }
   
-  a:hover {
+a:hover {
       text-decoration: underline;
   }
   
-  p {
+p {
       line-height: 1.2rem;
-  }
+}
   
-  :root {
+:root {
       font-size: 16px;
       --screen-text: rgb(184, 250, 239);
-  }
-  
-
-body {
-    background-color: rgb(233, 228, 208);
 }
+  
 
 /************************************ 
 
@@ -58,7 +59,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 1rem .5rem 1rem .5rem;
+    margin: 1.5rem 2rem;
     align-content: center;
    
 }
@@ -72,26 +73,7 @@ header {
     font-family: 'Orbitron', sans-serif;
     margin-right: 1em;
     font-weight: 600;
-    font-size: 1.5em;
-}
-
-@media (max-width: 640px) {
-    header {
-        display: flex;
-    }
-
-    h1 {
-    display: flex;
-    flex-direction: column;
-    }
-
-    .header-h2 {
-        margin: 0;
-        /* word-break: inherit; */
-        text-align: right;
-        font-size: 1.2em; 
-    }
-
+    font-size: 2rem;
 }
 
 /************************************ 
@@ -102,23 +84,14 @@ interface styling
 
 .interface-wrap {
     display: flex;
-    grid-template-columns: 1fr 3fr;
     margin: 2em auto;
     flex-direction: row;
     align-content: center;
-    justify-content: space-around;
-    align-items: baseline;
     padding: 1em;
-}
-
-@media (max-width: 640px) {
-    .interface-wrap {
-    margin: 0 auto;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    padding: .5em;
-    }
+    align-items: flex-start;
+    justify-content: space-evenly;
+    max-width: 120em;
+    height: calc(100vh - 14em);
 }
 
 /************************************ 
@@ -127,13 +100,15 @@ screen styling
 
 **************************************/
 
+.screen-wrapper {
+    font-size: 10px;
+    margin: auto 0;
+}
+
 .display-screen {
     border: 10px solid black;
     width: 25rem;
     height: 8rem;
-    /*display: flex;
-    flex-direction: column;
-    justify-content: space-between;*/
     padding: .5em;
     border-radius: 5px;
     background-color: rgb(68, 68, 180);
@@ -151,19 +126,6 @@ screen styling
     height: 36;
 }
 
-@media (max-width: 640px) {
-    .display-screen {
-        flex-direction: column;
-        width: 16rem;
-        height: 7rem;
-        padding: .2em;
-    }
-    .program, .game-status, .status-update, .current-move, .play-again {
-        font-size: .9rem;
-        
-    }
-}
-
 /************************************ 
 
 pad grid
@@ -171,62 +133,35 @@ pad grid
 **************************************/
 
 .game-grid {
-    /*display: grid;
+    font-size: 10px;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr; */
-    gap: 10px;
-    width: 500px;
-    height: 500px;
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 1em;
+    /*width: 500px;
+    height: 500px;*/
     background-color: rgba(104, 117, 133, 0.685);
     padding: 28px;
+    margin: auto 0;
 }
 
 .board-tile {
-    width: 160px;
-    height: 160px;
+    font-size: 1em;
+    width: 15em;
+    height: 15em;
     background-color: rgb(192, 189, 189);
-    /*width: 100%;
-    height: 100%; */
+
     cursor: pointer;
-    display: inline-block;
-    position:relative;
-    place-items: center;
-    font-size: 100px;
-    font-weight: bold;
     border-radius: 5px;
-    margin: 2px;
     box-shadow: inset -3px -5px 3px 2px rgb(12 11 11 / 22%)
 }
 
 .board-tile__marker {
-    position: absolute;
-    width: 160px;
-    height:160px;
-    text-align: center;
-    padding-top: 20px;
-}
-
-@media (max-width: 640px) {
-    .game-grid {
-        width: 100%;
-        height: 285px;
-        margin-top: 15px;
-        padding: 3px;
-    }
-
-    .board-tile {
-        width: 89px;
-        height: 89px;
-        left: 8px;
-    }
-
-    .board-tile__marker {
-        width: 82px;
-        height: 82px;
-        font-size: 50px;
-        padding: 0;
-        box-sizing: revert;
-    }
+    font-size: 15em;
+    width: 1em;
+    height: 1em;
+    display: grid;
+    place-content: center;
 }
 
 .board-tile-inactive {
