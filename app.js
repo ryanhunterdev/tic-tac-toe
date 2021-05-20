@@ -173,7 +173,7 @@ function resetAll() {
     gameInfo.textContent = "";
     playCount = 0;
     currentPlayer = "player1";
-    gameInfo.textContent = "Player 1";
+    gameInfo.textContent = "PLAYER 1";
     chopCount = 0;
     playAgainDiv.classList.remove('play-again-active');
     playAgainDiv.textContent = ""

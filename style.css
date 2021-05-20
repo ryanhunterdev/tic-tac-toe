@@ -29,6 +29,7 @@ html {
   
   :root {
       font-size: 16px;
+      --screen-text: rgb(184, 250, 239);
   }
   
   /* end reset */
@@ -63,17 +64,6 @@ h2 {
     font-size: 1.5em;
 }
 
-.display-screen {
-    border: 1px solid black;
-    width: 25rem;
-    height: 8rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: .5em;
-    border-radius: 5px;
-}
-
 .interface-wrap {
     display: flex;
     grid-template-columns: 1fr 3fr;
@@ -82,6 +72,24 @@ h2 {
     align-content: center;
     justify-content: space-around;
     align-items: baseline;
+}
+
+.display-screen {
+    border: 10px solid black;
+    width: 25rem;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: .5em;
+    border-radius: 5px;
+    background-color: rgb(68, 68, 180);
+}
+
+.program, .game-status, .status-update, .current-move, .play-again {
+    color: var(--screen-text);
+    font-size: 1.5rem;
+    font-family: sans-serif;
 }
 
 .game-grid {
