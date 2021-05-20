@@ -6,7 +6,7 @@ let currentPlayer = "player1";
 let boardTile = document.querySelectorAll('.board-tile');
 let gameInfo = document.querySelector('.game-info');
 let playAgainDiv = document.querySelector('.play-again');
-playAgainDiv.textContent = "Player 1's move";
+
 
 let tileObj = {
 0: "",
@@ -77,13 +77,13 @@ function handleTileClick(event) {
         if (currentPlayer === 'player1') { 
             event.target.innerText = "X";
             tileObj[selectedTile] = "x";
-            playAgainDiv.textContent = "Player 2's move";
+            gameInfo.textContent = "PLAYER 2";
             
         } else { 
             event.target.innerText = "O";
             tileObj[selectedTile] = "o";    
             event.target.classList.add('o-text-color'); 
-            playAgainDiv.textContent = "Player 1's move";            
+            gameInfo.textContent = "PLAYER 1";            
             
         } playCount++;
 
@@ -149,9 +149,9 @@ function itsADraw() {
 function winnerFunction(xOrO) {
     gameStatus = false;
     if (xOrO === "x") {
-        gameInfo.textContent = 'Player 1 wins!';
+        gameInfo.textContent = 'PLAYER 1 WINS';
     } else {
-        gameInfo.textContent = 'Player 2 wins!'
+        gameInfo.textContent = 'PLAYER 2 WINS'
     } 
     playWinSound();
     playAgain();
@@ -161,7 +161,7 @@ function winnerFunction(xOrO) {
 
 function playAgain() {
     playAgainDiv.classList.add('play-again-active');
-    playAgainDiv.textContent = "play again"
+    playAgainDiv.textContent = "PLAY AGAIN?"
     playAgainDiv.addEventListener('click', resetAll);
     for (let i = 0; i < boardTile.length; i++) {
         boardTile[i].classList.add('board-tile-inactive');
@@ -173,14 +173,16 @@ function resetAll() {
     gameInfo.textContent = "";
     playCount = 0;
     currentPlayer = "player1";
-    playAgainDiv.textContent = "Player 1's move";
+    gameInfo.textContent = "Player 1";
     chopCount = 0;
     playAgainDiv.classList.remove('play-again-active');
+    playAgainDiv.textContent = ""
     gameStartSound.play();
     for (let i = 0; i < boardTile.length; i++) {
         boardTile[i].textContent = "";
         boardTile[i].classList.remove('selected');
         boardTile[i].classList.remove('o-text-color');
+        boardTile[i].classList.remove('blink-1')
         tileObj[i] = "";
     }
 }
@@ -235,5 +237,3 @@ function makeBlink(index1, index2, index3) {
 for (let i = 0; i < boardTile.length; i++) {
     boardTile[i].addEventListener('click', handleTileClick)
 }
-
-

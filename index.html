@@ -7,13 +7,34 @@
     <title>Tic Tac Toe - Ryan Hunter</title>
     <link rel="stylesheet" href="style.css">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     
-    <div class="page-wrap">
-
-        <h1><span class="akai-caps">AKAI </span><small class="akai-cursive">Professional</small></h1>
+    
+    <header>
+        <h1>AKAI </span><small class="akai-cursive">Professional</small></h1>
         <h2>TIC-TAC-TOE 950XL</h2>
+    </header>
+
+    <div class="interface-wrap">
+
+        <section class="display-screen">
+            <div class="program">PROGRAM: TIC-TAC-TOE</div>
+
+            <div class="game-status">GAME STATUS: <span class="status-update">ACTIVE</span></div>
+
+            <div class="current-move">CURRENT MOVE: <span class="game-info"></span></div>
+
+            <div class="play-again">
+                <button class="play-again-yes"></button>
+                <button class="play-again-no"></button>
+            </div>
+
+
+        </section>
 
         <section class="game-grid">
            <div class="board-tile" data-index="0"></div>
@@ -26,10 +47,6 @@
            <div class="board-tile" data-index="7"></div>
            <div class="board-tile" data-index="8"></div>
         </section>
-
-
-        <section class="game-info"></section>
-        <div class="play-again"></div>
 
         <!--<button class="reset-btn">reset</button>-->
 
