@@ -75,10 +75,8 @@ function handleTileClick(event) {
         let selectedTile = event.target.dataset.index;
 
         if (currentPlayer === 'player1') { 
-          
             event.target.innerText = "X";
             tileObj[selectedTile] = "x";
-            //event.target.classList.add('x-text-color');
             playAgainDiv.textContent = "Player 2's move";
             
         } else { 
@@ -113,20 +111,28 @@ function compareResults() {
     }
     if (tileObj[0] == xOrO && tileObj[1] == xOrO && tileObj[2] == xOrO) {
             winnerFunction(xOrO);
+            makeBlink(0, 1, 2);
     } else if (tileObj[3] == xOrO && tileObj[4] == xOrO && tileObj[5] == xOrO) {
             winnerFunction(xOrO);
+            makeBlink(3, 4, 5);
     } else if (tileObj[6] == xOrO && tileObj[7] == xOrO && tileObj[8] == xOrO) {
             winnerFunction(xOrO);
-    } else if (tileObj[3] == xOrO && tileObj[0] == xOrO && tileObj[6] == xOrO){
+            makeBlink(6, 7, 8);
+    } else if (tileObj[3] == xOrO && tileObj[0] == xOrO && tileObj[6] == xOrO) {
             winnerFunction(xOrO);
+            makeBlink(3, 0, 6);
     } else if (tileObj[1] == xOrO && tileObj[4] == xOrO && tileObj[7] == xOrO) {
             winnerFunction(xOrO);
+            makeBlink(1, 4, 7);
     } else if (tileObj[2] == xOrO && tileObj[5] == xOrO && tileObj[8] == xOrO) {
             winnerFunction(xOrO);
+            makeBlink(2, 5, 8);
     } else if (tileObj[0] == xOrO && tileObj[4] == xOrO && tileObj[8] == xOrO) {
             winnerFunction(xOrO);
+            makeBlink(0, 4, 8);
     } else if (tileObj[6] == xOrO && tileObj[4] == xOrO && tileObj[2] == xOrO) {
             winnerFunction(xOrO);
+            makeBlink(6, 4, 2);
 
     }  playBreakChop();
 }
@@ -157,6 +163,9 @@ function playAgain() {
     playAgainDiv.classList.add('play-again-active');
     playAgainDiv.textContent = "play again"
     playAgainDiv.addEventListener('click', resetAll);
+    for (let i = 0; i < boardTile.length; i++) {
+        boardTile[i].classList.add('board-tile-inactive');
+    }
 }
 
 function resetAll() {
@@ -211,6 +220,14 @@ function playWinSound() {
         }
     }
 }        
+
+// css animation functions
+
+function makeBlink(index1, index2, index3) {
+    boardTile[index1].classList.add('blink-1');
+    boardTile[index2].classList.add('blink-1');
+    boardTile[index3].classList.add('blink-1');
+}
  
 
 // event listeners
