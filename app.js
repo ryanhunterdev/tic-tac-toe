@@ -1,12 +1,16 @@
-// page variables
+/************************************ 
+
+page variables
+
+**************************************/
 
 let gameStatus = true;
 let playCount = 0;
 let currentPlayer = "player1";
-let boardTile = document.querySelectorAll('.board-tile');
+let boardTile = document.querySelectorAll('.board-tile__marker');
 let gameInfo = document.querySelector('.game-info');
 let playAgainDiv = document.querySelector('.play-again');
-
+let statusUpdate = document.querySelector('.status-update');
 
 let tileObj = {
 0: "",
@@ -20,7 +24,11 @@ let tileObj = {
 8: ""
 }
 
-// audio elements
+/************************************ 
+
+Audio elements
+
+**************************************/
 
 // amen break choops
 
@@ -65,7 +73,11 @@ const winSounds = [gameWinSound0, gameWinSound1, gameWinSound2, gameWinSound3, g
 
 let winCount = 0;
 
-// event functions
+/************************************ 
+
+Event functions
+
+**************************************/
 
 function handleTileClick(event) {
 
@@ -83,7 +95,7 @@ function handleTileClick(event) {
             event.target.innerText = "O";
             tileObj[selectedTile] = "o";    
             event.target.classList.add('o-text-color'); 
-            gameInfo.textContent = "PLAYER 1";            
+            gameInfo.textContent = "PLAYER 1";      
             
         } playCount++;
 
@@ -92,7 +104,11 @@ function handleTileClick(event) {
     }
 }
 
-// game logic
+/************************************ 
+
+Game Logic
+
+**************************************/
 
 function compareResults() {
 
@@ -137,17 +153,23 @@ function compareResults() {
     }  playBreakChop();
 }
 
-// win lose or draw functions
+/************************************ 
+
+win lose or draw functions
+
+**************************************/
 
 function itsADraw() {
-    gameInfo.textContent = "It's a draw!"
+    gameInfo.textContent = "DRAW"
     gameStatus = false;
+    statusUpdate.textContent = "INACTIVE";
     playDrawSound();
     playAgain();
 }
 
 function winnerFunction(xOrO) {
     gameStatus = false;
+    statusUpdate.textContent = "INACTIVE";
     if (xOrO === "x") {
         gameInfo.textContent = 'PLAYER 1 WINS';
     } else {
@@ -157,7 +179,11 @@ function winnerFunction(xOrO) {
     playAgain();
 }
 
-// play again / reset board functions
+/************************************ 
+
+play again, reset functions
+
+**************************************/
 
 function playAgain() {
     playAgainDiv.classList.add('play-again-active');
@@ -176,7 +202,8 @@ function resetAll() {
     gameInfo.textContent = "PLAYER 1";
     chopCount = 0;
     playAgainDiv.classList.remove('play-again-active');
-    playAgainDiv.textContent = ""
+    playAgainDiv.textContent = "";
+    statusUpdate.textContent = "ACTIVE";
     gameStartSound.play();
     for (let i = 0; i < boardTile.length; i++) {
         boardTile[i].textContent = "";
@@ -187,7 +214,11 @@ function resetAll() {
     }
 }
 
-// audio functions
+/************************************ 
+
+audio functions
+
+**************************************/
 
 function playBreakChop() {
     if (gameStatus === true) {
@@ -223,7 +254,11 @@ function playWinSound() {
     }
 }        
 
-// css animation functions
+/************************************ 
+
+CSS animation function
+
+**************************************/
 
 function makeBlink(index1, index2, index3) {
     boardTile[index1].classList.add('blink-1');
@@ -232,7 +267,11 @@ function makeBlink(index1, index2, index3) {
 }
  
 
-// event listeners
+/************************************ 
+
+Event listeners
+
+**************************************/
 
 for (let i = 0; i < boardTile.length; i++) {
     boardTile[i].addEventListener('click', handleTileClick)
