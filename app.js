@@ -11,6 +11,7 @@ let boardTile = document.querySelectorAll('.board-tile__marker');
 let gameInfo = document.querySelector('.game-info');
 let playAgainDiv = document.querySelector('.play-again');
 let statusUpdate = document.querySelector('.status-update');
+let soundToggle = document.querySelector('.sound-toggle');
 
 let tileObj = {
 0: "",

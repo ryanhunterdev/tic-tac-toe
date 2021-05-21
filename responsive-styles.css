@@ -1,0 +1,226 @@
+/************************************ 
+
+ultra wide screen styling
+
+**************************************/
+
+@media (min-width: 1600px) {
+
+    .display-screen {
+        font-size: 1.6em;
+    }
+
+    .game-grid {
+        font-size: 13px;
+    }
+
+    footer {
+        font-size: 1.2rem;
+    }
+
+}
+
+/************************************ 
+
+small monitor styling
+
+**************************************/
+
+@media (max-width: 1200px) {
+
+    .display-screen {
+        font-size: 1.1em;
+    }
+
+    .game-grid {
+        font-size: 9px;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 2.5rem;
+        color: rgb(218, 3, 3); 
+    }
+
+    .header-h2 {
+        font-size: 1.5rem;
+    }
+
+}
+
+/************************************ 
+
+tablet styling
+
+**************************************/
+
+@media (max-width: 770px) {
+
+    header {
+        margin: 1rem 2rem;
+    }
+
+    .interface-wrap {
+        margin: 3rem 0 0 0;
+        flex-direction: column;
+        align-content: space-around;
+        align-items: center;
+        justify-content: space-around;
+        max-width: 120em;
+        height: calc(100vh - 11em);
+        gap: 3em;
+    }
+
+    .screen-wrapper {
+        margin: 0 auto;
+    }
+
+    .display-screen {
+        font-size: 1.4em;
+    }
+
+    .game-grid {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        color: rgb(218, 3, 3); 
+    }
+
+    .header-h2 {
+        font-size: 1.5rem;
+    }
+
+}
+
+/************************************ 
+
+mobile - large styling
+
+**************************************/
+
+@media (max-width: 430px) {
+
+    header {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    align-content: stretch;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+    
+    .akai-cursive {
+        font-style: italic;
+        font-size: .5em;
+    }
+    
+    .header-h2 {
+        font-family: 'Orbitron', sans-serif;
+        margin: .5em;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    .interface-wrap {
+        height: calc(100vh - 16.5em);
+        padding: .5em .5em 1.5em;
+        gap: 1em;
+    }
+
+    .display-screen {
+        font-size: 1em;
+        padding: 1.1em;
+    }
+
+    .game-grid {
+        font-size: 7.6px;
+        padding: 20px;
+    }
+
+    footer {
+        margin-top: 2rem;
+    }
+}
+
+/************************************ 
+
+mobile - medium styling
+
+**************************************/
+
+@media (max-width: 380px) {
+
+    header {
+        margin: 1em;
+    }
+
+    .interface-wrap {
+        justify-content: space-evenly;
+        height: calc(100vh - 16em);
+        gap: 1em;
+    }
+
+    .display-screen {
+        font-size: .85em;
+        padding: .9em
+    }
+
+    .program, .game-status, .status-update, .current-move, .play-again {
+        padding: 4px;
+    }
+
+    .game-grid {
+        font-size: 6.9px;
+        padding: 15px;
+    }
+
+    footer {
+        margin-top: 1.5rem;
+    }
+
+}
+
+/************************************ 
+
+mobile - small styling
+
+**************************************/
+
+@media (max-width: 330px) {
+
+    header {
+        font-size: 6px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .header-h2 {
+        font-size: 1.3rem;
+    }
+
+    .interface-wrap {
+        justify-content: space-between;
+        height: calc(100vh - 14.5em);
+        margin: 0px;
+    }
+
+    .display-screen {
+        font-size: .7em;
+    }
+
+    .program, .game-status, .status-update, .current-move, .play-again {
+        padding: 3px;
+    }
+
+    .game-grid {
+        font-size: 6px;
+        padding: 10px;
+    }
+
+    footer {
+        margin-top: 4.5rem;
+    }
+}
