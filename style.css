@@ -106,19 +106,27 @@ screen styling
 }
 
 .display-screen {
-    border: 10px solid black;
-    width: 25rem;
-    height: 8rem;
-    padding: .5em;
+    font-size: 1.3em;
+    border: 8px solid black;
+    width: 35em;
+    height: 11em;
+    padding: .6em;
     border-radius: 5px;
     background-color: rgb(68, 68, 180);
 }
 
 .program, .game-status, .status-update, .current-move, .play-again {
     color: var(--screen-text);
-    font-size: 1.3rem;
+    font-size: 1.7em;
     font-family: sans-serif;
     padding: 5px;
+}
+.game-status {
+    font-size: 1.7em;
+}
+
+.status-update {
+    font-size: 1em;
 }
 
 .playagain {
@@ -187,6 +195,24 @@ pad grid
 
 .play-again-active {
     cursor: pointer;
+}
+
+/************************************ 
+
+ultra wide screen styling
+
+**************************************/
+
+@media (min-width: 1600px) {
+
+    .display-screen {
+        font-size: 1.6em;
+    }
+
+    .game-grid {
+        font-size: 13px;
+    }
+
 }
 
 
