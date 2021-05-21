@@ -13,6 +13,7 @@ let gameInfo = document.querySelector('.game-info');
 let playAgainDiv = document.querySelector('.play-again');
 let statusUpdate = document.querySelector('.status-update');
 let soundToggle = document.querySelector('.sound-toggle');
+let soundOnOff = document.querySelector('.sound-on-off')
 
 let tileObj = {
 0: "",
@@ -269,10 +270,14 @@ function playWinSound() {
     }
 }   
 
+// wanna make this more precise
 
 function toggleSound() {
+    
     if (soundOn) {
         soundOn = false;
+        soundOnOff.classList.add('sound-toggle-off');
+        soundOnOff.textContent = "OFF";
         for (let i = 0; i < amenChops.length; i++) {
             amenChops[i].volume = 0;
         }
@@ -285,6 +290,8 @@ function toggleSound() {
         gameStartSound.volume = 0;
     } else {
         soundOn = true;
+        soundOnOff.classList.remove('sound-toggle-off');
+        soundOnOff.textContent = "ON";
         for (let i = 0; i < amenChops.length; i++) {
             amenChops[i].volume = .7;
         }

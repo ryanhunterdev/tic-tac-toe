@@ -139,6 +139,10 @@ screen styling
     cursor: pointer;
 }
 
+.sound-toggle-off {
+    color: rgb(89, 124, 118);
+}
+
 /************************************ 
 
 pad grid
