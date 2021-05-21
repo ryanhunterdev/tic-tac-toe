@@ -1,6 +1,6 @@
 Tic Tac Toe Game by Ryan Hunter
 
-//Link goes here
+https://ryanhunterdev.github.io/tic-tac-toe/
 
 TIC-TAC-TOE 950xl is a classic noughts and crosses game with a 90's sampler/drum machine twist. 
 
