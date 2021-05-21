@@ -136,6 +136,7 @@ screen styling
 .sound-toggle {
     float: right;
     font-size: .8em;
+    cursor: pointer;
 }
 
 /************************************ 

@@ -5,6 +5,7 @@ page variables
 **************************************/
 
 let gameStatus = true;
+let soundOn = true;
 let playCount = 0;
 let currentPlayer = "player1";
 let boardTile = document.querySelectorAll('.board-tile__marker');
@@ -42,11 +43,16 @@ const amenChop5 = new Audio('./audio/amen-chop-5.wav');
 const amenChops = [amenChop1, amenChop2,
 amenChop3, amenChop4, amenChop5];
 
+for (let i = 0; i < amenChops.length; i++) {
+    amenChops[i].volume = .7;
+}
+
 let chopCount = 0;
 
 // start end and draw sounds
 
 const gameStartSound = new Audio("./audio/amen-roll-start-of-game.wav");
+gameStartSound.volume = .7;
 
 const gameDrawSound0 = new Audio("./audio/draw-sounds/draw0.wav");
 const gameDrawSound1 = new Audio("./audio/draw-sounds/draw1.wav");
@@ -56,6 +62,10 @@ const gameDrawSound4 = new Audio("./audio/draw-sounds/draw4.wav");
 const gameDrawSound5 = new Audio("./audio/draw-sounds/draw5.wav");
 
 const drawSounds = [gameDrawSound0, gameDrawSound1, gameDrawSound2, gameDrawSound3, gameDrawSound4, gameDrawSound5];
+
+for (let i = 0; i < drawSounds.length; i++) {
+    drawSounds[i].volume = .7;
+}
 
 let drawCount = 0;
 
@@ -71,6 +81,10 @@ const gameWinSound8 = new Audio("./audio/win-sounds/win8.wav");
 
 
 const winSounds = [gameWinSound0, gameWinSound1, gameWinSound2, gameWinSound3, gameWinSound4, gameWinSound5, gameWinSound6, gameWinSound7, gameWinSound8];
+
+for (let i = 0; i < winSounds.length; i++) {
+    winSounds[i].volume = .7;
+}
 
 let winCount = 0;
 
@@ -253,7 +267,36 @@ function playWinSound() {
             winSounds[winCount].play();
         }
     }
-}        
+}   
+
+
+function toggleSound() {
+    if (soundOn) {
+        soundOn = false;
+        for (let i = 0; i < amenChops.length; i++) {
+            amenChops[i].volume = 0;
+        }
+        for (let i = 0; i < drawSounds.length; i++) {
+            drawSounds[i].volume = 0;
+        }
+        for (let i = 0; i < winSounds.length; i++) {
+            winSounds[i].volume = 0;
+        }
+        gameStartSound.volume = 0;
+    } else {
+        soundOn = true;
+        for (let i = 0; i < amenChops.length; i++) {
+            amenChops[i].volume = .7;
+        }
+        for (let i = 0; i < drawSounds.length; i++) {
+            drawSounds[i].volume = .7;
+        }
+        for (let i = 0; i < winSounds.length; i++) {
+            winSounds[i].volume = .7;
+        }
+        gameStartSound.volume = .7;
+    }
+}   
 
 /************************************ 
 
@@ -275,5 +318,7 @@ Event listeners
 **************************************/
 
 for (let i = 0; i < boardTile.length; i++) {
-    boardTile[i].addEventListener('click', handleTileClick)
+    boardTile[i].addEventListener('click', handleTileClick);
 }
+
+soundToggle.addEventListener('click', toggleSound)
