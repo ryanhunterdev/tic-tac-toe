@@ -112,9 +112,7 @@ screen styling
     padding: .6em;
     border-radius: 5px;
     background: linear-gradient(0deg, rgba(68,120,180,1) 1%, rgba(68,73,180,1) 17%, rgba(68,75,180,1) 28%, rgba(68,79,180,1) 40%, rgba(68,88,180,1) 54%, rgba(68,86,180,1) 66%, rgba(68,84,180,1) 79%, rgba(68,68,180,1) 86%, rgba(45,145,253,1) 100%);
-    -webkit-box-shadow: inset 6px 7px 6px 2px rgba(0,0,0,0.44);
-    -moz-box-shadow: inset 6px 7px 6px 2px rgba(0,0,0,0.44);
-    box-shadow: inset 6px 7px 6px 2px rgba(0,0,0,0.44);
+    box-shadow: 6px 7px 6px 2px rgba(0,0,0,0.44);
 }
 
 .program, .game-status, .status-update, .current-move, .play-again {
@@ -173,7 +171,10 @@ pad grid
 
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: inset -3px -5px 3px 2px rgb(12 11 11 / 22%)
+    /*box-shadow: inset -3px -5px 3px 2px rgb(12 11 11 / 22%)*/
+    -webkit-box-shadow: inset -8px -8px 3px 0px rgb(0 0 0 / 54%);
+    -moz-box-shadow: inset -8px -8px 3px 0px rgb(0 0 0 / 54%);
+    box-shadow: inset -8px -8px 3px 0px rgb(0 0 0 / 54%);
 }
 
 .board-tile__marker {

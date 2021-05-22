@@ -112,6 +112,10 @@ mobile - large styling
     flex-wrap: wrap;
     }
     
+    h1 {
+        font-size: 2rem;
+    }
+
     .akai-cursive {
         font-style: italic;
         font-size: .5em;
@@ -121,17 +125,17 @@ mobile - large styling
         font-family: 'Orbitron', sans-serif;
         margin: .5em;
         font-weight: 600;
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .interface-wrap {
-        height: calc(100vh - 16.5em);
+        height: calc(100vh - 30vh);
         padding: .5em .5em 1.5em;
         gap: 1em;
     }
 
     .display-screen {
-        font-size: 1em;
+        font-size: .8em;
         padding: 1.1em;
     }
 
@@ -159,7 +163,7 @@ mobile - medium styling
 
     .interface-wrap {
         justify-content: space-evenly;
-        height: calc(100vh - 16em);
+        height: calc(100vh - 35vh);
         gap: 1em;
     }
 
