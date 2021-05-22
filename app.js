@@ -35,11 +35,11 @@ Audio elements
 
 // amen break choops
 
-const amenChop2 = new Audio('./audio/amen-chop-2.wav');
-const amenChop3 = new Audio('./audio/amen-chop-3.wav');
-const amenChop4 = new Audio('./audio/amen-chop-4.wav');
-const amenChop1 = new Audio('./audio/amen-chop-1.wav');
-const amenChop5 = new Audio('./audio/amen-chop-5.wav');
+const amenChop2 = new Audio('./audio/amen-chop-2.mp3');
+const amenChop3 = new Audio('./audio/amen-chop-3.mp3');
+const amenChop4 = new Audio('./audio/amen-chop-4.mp3');
+const amenChop1 = new Audio('./audio/amen-chop-1.mp3');
+const amenChop5 = new Audio('./audio/amen-chop-5.mp3');
 
 const amenChops = [amenChop1, amenChop2,
 amenChop3, amenChop4, amenChop5];
@@ -52,15 +52,15 @@ let chopCount = 0;
 
 // start end and draw sounds
 
-const gameStartSound = new Audio("./audio/amen-roll-start-of-game.wav");
+const gameStartSound = new Audio("./audio/amen-roll-start-of-game.mp3");
 gameStartSound.volume = .7;
 
-const gameDrawSound0 = new Audio("./audio/draw-sounds/draw0.wav");
-const gameDrawSound1 = new Audio("./audio/draw-sounds/draw1.wav");
-const gameDrawSound2 = new Audio("./audio/draw-sounds/draw2.wav");
-const gameDrawSound3 = new Audio("./audio/draw-sounds/draw3.wav");
-const gameDrawSound4 = new Audio("./audio/draw-sounds/draw4.wav");
-const gameDrawSound5 = new Audio("./audio/draw-sounds/draw5.wav");
+const gameDrawSound0 = new Audio("./audio/draw-sounds/draw0.mp3");
+const gameDrawSound1 = new Audio("./audio/draw-sounds/draw1.mp3");
+const gameDrawSound2 = new Audio("./audio/draw-sounds/draw2.mp3");
+const gameDrawSound3 = new Audio("./audio/draw-sounds/draw3.mp3");
+const gameDrawSound4 = new Audio("./audio/draw-sounds/draw4.mp3");
+const gameDrawSound5 = new Audio("./audio/draw-sounds/draw5.mp3");
 
 const drawSounds = [gameDrawSound0, gameDrawSound1, gameDrawSound2, gameDrawSound3, gameDrawSound4, gameDrawSound5];
 
@@ -70,15 +70,15 @@ for (let i = 0; i < drawSounds.length; i++) {
 
 let drawCount = 0;
 
-const gameWinSound0 = new Audio("./audio/win-sounds/win0.wav");
-const gameWinSound1 = new Audio("./audio/win-sounds/win1.wav");
-const gameWinSound2 = new Audio("./audio/win-sounds/win2.wav");
-const gameWinSound3 = new Audio("./audio/win-sounds/win3.wav");
-const gameWinSound4 = new Audio("./audio/win-sounds/win4.wav");
-const gameWinSound5 = new Audio("./audio/win-sounds/win5.wav");
-const gameWinSound6 = new Audio("./audio/win-sounds/win6.wav");
-const gameWinSound7 = new Audio("./audio/win-sounds/win7.wav");
-const gameWinSound8 = new Audio("./audio/win-sounds/win8.wav");
+const gameWinSound0 = new Audio("./audio/win-sounds/win0.mp3");
+const gameWinSound1 = new Audio("./audio/win-sounds/win1.mp3");
+const gameWinSound2 = new Audio("./audio/win-sounds/win2.mp3");
+const gameWinSound3 = new Audio("./audio/win-sounds/win3.mp3");
+const gameWinSound4 = new Audio("./audio/win-sounds/win4.mp3");
+const gameWinSound5 = new Audio("./audio/win-sounds/win5.mp3");
+const gameWinSound6 = new Audio("./audio/win-sounds/win6.mp3");
+const gameWinSound7 = new Audio("./audio/win-sounds/win7.mp3");
+const gameWinSound8 = new Audio("./audio/win-sounds/win8.mp3");
 
 
 const winSounds = [gameWinSound0, gameWinSound1, gameWinSound2, gameWinSound3, gameWinSound4, gameWinSound5, gameWinSound6, gameWinSound7, gameWinSound8];
