@@ -137,7 +137,19 @@ mobile - large styling
 
     .display-screen {
         font-size: .9em;
-        padding: 1em;
+        padding: 1.2em;
+    }
+
+    .program, .game-status, .status-update, .current-move, .play-again {
+        font-size: 1.5em;
+    }
+
+    .game-status {
+        font-size: 1.5em;
+    }
+
+    .status-update {
+        font-size: 1em;
     }
 
     .game-grid {
