@@ -13,7 +13,8 @@ let gameInfo = document.querySelector('.game-info');
 let playAgainDiv = document.querySelector('.play-again');
 let statusUpdate = document.querySelector('.status-update');
 let soundToggle = document.querySelector('.sound-toggle');
-let soundOnOff = document.querySelector('.sound-on-off')
+let soundOnOff = document.querySelector('.sound-on-off');
+let mainVolume = .7
 
 let tileObj = {
 0: "",
@@ -45,7 +46,7 @@ const amenChops = [amenChop1, amenChop2,
 amenChop3, amenChop4, amenChop5];
 
 for (let i = 0; i < amenChops.length; i++) {
-    amenChops[i].volume = .7;
+    amenChops[i].volume = mainVolume;
 }
 
 let chopCount = 0;
@@ -65,7 +66,7 @@ const gameDrawSound5 = new Audio("./audio/draw-sounds/draw5.mp3");
 const drawSounds = [gameDrawSound0, gameDrawSound1, gameDrawSound2, gameDrawSound3, gameDrawSound4, gameDrawSound5];
 
 for (let i = 0; i < drawSounds.length; i++) {
-    drawSounds[i].volume = .7;
+    drawSounds[i].volume = mainVolume;
 }
 
 let drawCount = 0;
@@ -84,7 +85,7 @@ const gameWinSound8 = new Audio("./audio/win-sounds/win8.mp3");
 const winSounds = [gameWinSound0, gameWinSound1, gameWinSound2, gameWinSound3, gameWinSound4, gameWinSound5, gameWinSound6, gameWinSound7, gameWinSound8];
 
 for (let i = 0; i < winSounds.length; i++) {
-    winSounds[i].volume = .7;
+    winSounds[i].volume = mainVolume;
 }
 
 let winCount = 0;
@@ -236,7 +237,12 @@ audio functions
 
 **************************************/
 
+function randomIndex(arr) {
+    return Math.floor(Math.random() * arr.length);
+}
+
 function playBreakChop() {
+    
     if (gameStatus === true) {
         if (chopCount < amenChops.length) {
         amenChops[chopCount].play();
@@ -249,25 +255,15 @@ function playBreakChop() {
 }
 
 function playDrawSound() {
-    if (drawCount < drawSounds.length) {
-        drawSounds[drawCount].play();
-        drawCount++;
-    } else {
-        drawCount = 0;
-        amenChops[chopCount].play();
-    }
+
+    let index = randomIndex(drawSounds);
+    drawSounds[index].play();
 }
 
 function playWinSound() {
-    if (gameStatus === false) {
-        if (winCount < winSounds.length) {
-            winSounds[winCount].play();
-            winCount++;
-        } else {
-            winCount = 0;
-            winSounds[winCount].play();
-        }
-    }
+
+    let index = randomIndex(winSounds);
+    winSounds[index].play();
 }   
 
 // wanna make this more precise
