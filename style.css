@@ -16,8 +16,7 @@ html {
   }
 
 body {
-    background-color: rgb(233, 228, 208);
-    
+    background: linear-gradient(0deg, rgba(215,211,192,1) 4%, rgba(233,228,208,1) 15%, rgba(233,228,208,1) 78%, rgba(215,211,192,1) 96%);
 }
 
 h1 {
@@ -113,6 +112,7 @@ screen styling
     border-radius: 5px;
     background: linear-gradient(0deg, rgba(68,120,180,1) 1%, rgba(68,73,180,1) 17%, rgba(68,75,180,1) 28%, rgba(68,79,180,1) 40%, rgba(68,88,180,1) 54%, rgba(68,86,180,1) 66%, rgba(68,84,180,1) 79%, rgba(68,68,180,1) 86%, rgba(45,145,253,1) 100%);
     box-shadow: 6px 7px 6px 2px rgba(0,0,0,0.44);
+    transition: .3s ease-in;
 }
 
 .program, .game-status, .status-update, .current-move, .play-again {
@@ -142,6 +142,26 @@ screen styling
 
 .sound-toggle-off {
     color: rgb(89, 124, 118);
+}
+
+.screen-button-wrap{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    font-size: 10px;
+    margin-top: 2em;
+}
+
+.screen-button {
+    width: 5em;
+    height: 2.5em;
+    border: 1px solid black;
+    background-color: rgb(252 251 248);
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    font-family: sans-serif;
+    box-shadow: 4px 11px 0px -2px rgba(0,0,0,0.75);
 }
 
 /************************************ 
